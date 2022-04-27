@@ -47,8 +47,11 @@ def predict():
 
         pred_LSTM = (model.predict(pred_padded) > 0.5).astype("int32")
 
+        if pred_LSTM[0]== 0:
+            return render_template('index.html', prediction_text="ce message n'est pas choquant ")
+        else:
+            return render_template('index.html', prediction_text= " message choquant")
 
-        return render_template('index.html', prediction_text=pred_LSTM[0])
 
 
 if __name__ == '__main__':

@@ -22,6 +22,13 @@
     <form action="{{ url_for('predict')}}" method="post">
         <!--	<input type="text" name="experience" placeholder="Experience" required="required" />
            <input type="text" name="test_score" placeholder="Test Score" required="required" /> -->
+        <label for="ice-cream-choice">Choisir La Langue :</label>
+        <input list="ice-cream-flavors" id="ice-cream-choice" name="choix-de-langue" />
+
+        <datalist id="ice-cream-flavors">
+            <option value="Anglais">
+            <option value="Français">
+        </datalist>
         <input type="text" name="interview_score" placeholder="Entrer votre Message ici" required="required"/>
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
@@ -30,6 +37,7 @@
     <br>
     <br>
     {{ prediction_text }}
+     {{ choix_langue }}
 
 
 </div>
